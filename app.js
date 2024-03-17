@@ -26,42 +26,44 @@
 // 2. Use a template literal to include the BMI values in the outputs. 
 // Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
 
-// Adding a function to the mix
-// function bmi(mass, height){
-//     return mass / height ** 2
-// }
-// Adding arrow function
+// // Adding a function to the mix
+// // function bmi(mass, height){
+// //     return mass / height ** 2
+// // }
+// // Adding arrow function
 // const bmi = (mass, height) => mass / height ** 2;
-// *********************************************************
+// // *********************************************************
 
-//Mark
-// let markMass = 78;
-// let markHeight = 1.69;
+// //Mark
+// // let markMass = 78;
+// // let markHeight = 1.69;
 // let markMass = 95;
 // let markHeight = 1.88;
 
-//John
-// let johnMass = 92;
-// let johnHeight = 1.95;
+// //John
+// // let johnMass = 92;
+// // let johnHeight = 1.95;
 // let johnMass = 85;
 // let johnHeight = 1.76;
 
-//BMI
-// let markBMI = markMass / markHeight ** 2;
-// let johnBMI = johnMass / johnHeight ** 2;
-// console.log(`Mark's BMI is: ${markBMI}`);
-// console.log(`John's BMI is: ${johnBMI}`);
-// Complete basic requirement
+// //BMI
+// // let markBMI = markMass / markHeight ** 2;
+// // let johnBMI = johnMass / johnHeight ** 2;
+// // console.log(`Mark's BMI is: ${markBMI}`);
+// // console.log(`John's BMI is: ${johnBMI}`);
+// // Complete basic requirement
 // let markBMI = bmi(markMass, markHeight);
 // let johnBMI = bmi(johnMass, johnHeight);
 
-// Output
-// if(markBMI > johnBMI) {
+// // Output
+// if (markBMI > johnBMI) {
 //     markHigherBMI = true;
-//     console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
-// } else {
+//     console.log(`Mark's BMI (${markBMI.toFixed(2)}) is higher than John's (${johnBMI.toFixed(2)})!`);
+// } else if (johnBMI > markBMI) {
 //     markHigherBMI = false;
-//     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+//     console.log(`John's BMI (${johnBMI.toFixed(2)}) is higher than Mark's (${markBMI.toFixed(2)})!`);
+// } else {
+//     console.log(`Mark and John have the same BMI (${markBMI.toFixed(2)})!`);
 // }
 
 // *********************************************************
@@ -88,36 +90,37 @@
 // function avgScore(scoreArray){
 //     let totalScores = 0;
 
-//     for(i = 0; i < scoreArray.length; i++){'
+//     for(let i = 0; i < scoreArray.length; i++){
 //         // Add all scores
+//         console.log(i);
 //         totalScores += scoreArray[i]
 //     }
 //     console.log(totalScores);
 //     // Average = the total divided by number of scores
 //     return totalScores / scoreArray.length
 // }
-// First data set:
+// // First data set:
 // let dolphinScores = [96, 108, 89];
 // let koalasScores = [88, 91, 110];
-// Second data set:
-// let dolphinScores = [97, 112, 101];
-// let koalasScores = [109, 95, 123];
-// Third data set:
-// let dolphinScores = [97, 112, 101];
-// let koalasScores = [109, 95, 106];
+// // Second data set:
+// // let dolphinScores = [97, 112, 101];
+// // let koalasScores = [109, 95, 123];
+// // Third data set:
+// // let dolphinScores = [97, 112, 101];
+// // let koalasScores = [109, 95, 106];
 
 // let dolphinsAvgScore = avgScore(dolphinScores);
 // let koalasAvgScore = avgScore(koalasScores);
 
-// Only average scores above 100 can win trophy
-// if (dolphinsAvgScore > 100 || koalasAvgScore > 100){
+// // Only average scores above 100 can win trophy
+// if (dolphinsAvgScore >= 100 && koalasAvgScore >= 100){
 //     // Determine winner by score         
 //     if(dolphinsAvgScore > koalasAvgScore) {
 //         console.log(`Dolphins (${dolphinsAvgScore}) win over the Koalas (${koalasAvgScore})`);
 //     } else if (koalasAvgScore > dolphinsAvgScore) {
 //         console.log(`Koalas (${koalasAvgScore}) win over the Dolphins (${dolphinsAvgScore})`);
 //     } else {
-//         console.log(`Dolphins ${dolphinsAvgScore}) and Koalas ${koalasAvgScore}) draw.`);
+//         console.log(`It's a draw with both teams having a score of at least 100. Dolphins ${dolphinsAvgScore}) and Koalas ${koalasAvgScore}) draw.`);
 //     }
 // } else {
 //     console.log(`Neither team qualified to win with average scores less than 100. Dolphins: ${dolphinsAvgScore} to Koalas: ${koalasAvgScore}`);
@@ -141,13 +144,15 @@
 
 // Data
 // let totalBill = 55;
-// let totalBill = 275;
+ let totalBill = 275;
 // let totalBill = 40;
-let totalBill = 430;
+// let totalBill = 430;
 
 // Ternary operator - tip variable
 const tip = (totalBill >= 50 && totalBill <= 300) ? .15 : .2;
+// Calculate the tip amount
+const tipAmount = totalBill * tip;
 // The total value is the total paid with the total bill plus tip
-let totalValue = totalBill + (totalBill * tip);
+let totalValue = totalBill + tipAmount;
 
-console.log(`The bill was \$${totalBill}, the tip was \$${totalBill * tip} at ${tip*100}%, and the total value \$${totalValue} `);
+console.log(`The bill was \$${totalBill}, the tip was \$${tipAmount.toFixed(2)} at ${tip*100}%, and the total value \$${totalValue.toFixed(2)} `);
